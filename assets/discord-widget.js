@@ -1,4 +1,4 @@
-// discord-widget.js
+
 document.addEventListener("DOMContentLoaded", () => {
   const discordLink = document.getElementById("discord-link");
 
