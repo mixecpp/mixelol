@@ -1,0 +1,51 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+
+.homecontainer {
+  font-variant: small-caps;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.hometitle {
+  font-size: xx-large;
+  margin: 0;
+}
+
+.discordlink {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  margin: 0;
+  z-index: 100;
+  display: inline-block;
+}
+
+.discordlink a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.discordlink a i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.discordlink a:hover i {
+  transform: translateY(-5px);
+}
