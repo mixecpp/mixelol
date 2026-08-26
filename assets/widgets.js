@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const discordLink = document.getElementById("discord-link");
+  const discord = document.getElementById("discordd");
 
-  if (discordLink && typeof SITE_CONFIG !== "undefined") {
-    discordLink.href = SITE_CONFIG.discordInvite;
-    discordLink.style.textDecoration = "none";
+  if (discord && typeof SITE_CONFIG !== "undefined") {
+    discord.href = SITE_CONFIG.discord;
+    discord.style.textDecoration = "none";
   }
 });

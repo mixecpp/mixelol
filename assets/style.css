@@ -62,7 +62,7 @@ html {
   margin: 0;
 }
 
-.discordlink {
+.discord {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -71,19 +71,19 @@ html {
   display: inline-block;
 }
 
-.discordlink a {
+.discord a {
   color: white;
   text-decoration: none;
   font-size: 30px;
   display: inline-block;
 }
 
-.discordlink a i {
+.discord a i {
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.discordlink a:hover i {
+.discord a:hover i {
   transform: translateY(-5px);
 }
 
