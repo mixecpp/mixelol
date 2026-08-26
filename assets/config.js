@@ -1,3 +1,4 @@
 const SITE_CONFIG = {
-  discordInvite: "https://discord.gg/code",
+  discordInvite: "https://mixe.lol/discord",
+  githublink: "https://github.com/mixecpp",
 };

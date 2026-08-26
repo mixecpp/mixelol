@@ -9,6 +9,43 @@ html {
   color: white;
 }
 
+.navbar {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-bottom: 1px solid #222;
+  border-radius: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000000;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar-links a:hover {
+  color: #ccc;
+}
+
 .homecontainer {
   font-variant: small-caps;
   font-family: "Courier New", Courier, monospace;
@@ -47,5 +84,30 @@ html {
 }
 
 .discordlink a:hover i {
+  transform: translateY(-5px);
+}
+
+.githublink {
+  position: fixed;
+  right: 65px;
+  bottom: 20px;
+  margin: 0;
+  z-index: 100;
+  display: inline-block;
+}
+
+.githublink a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.githublink a i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.githublink a:hover i {
   transform: translateY(-5px);
 }
