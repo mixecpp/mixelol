@@ -5,19 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mixe.lol | projects</title>
-
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
 
     <script src="assets/widgets.js"></script>
     <script src="assets/main.js"></script>
     <script src="assets/config.js"></script>
+
 </head>
 
 <body>
     <div id="navbar"></div>
 
     <div class="homecontainer">
+        <div class="searchbar">
+            <input type="text" id="searchInput" placeholder="find projects.">
+        </div>
         <div class="projects-grid">
             <div class="project">
                 <div class="project-header">
@@ -26,16 +32,23 @@
                     </div>
                     <h2 class="projecttitle">mixelol</h2>
                 </div>
-
                 <p class="project-desc">my personal website, with my links and information</p>
-
                 <div class="project-links">
                     <a href="https://github.com/mixecpp/mixelol" target="_blank">
                         <i class="fa-brands fa-github"></i>
                     </a>
+                    <a href="https://mixe.lol" target="_blank" class="globe-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24">
+                            <path class="bog-ux" />
+                        </svg>
+
+                    </a>
+
                 </div>
             </div>
         </div>
+
+
     </div>
     <div class="discord">
         <a href="" target="_blank" id="discordd">
@@ -48,6 +61,33 @@
             <i class="fa-brands fa-github"></i>
         </a>
     </div>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function (e) {
+            const query = e.target.value.trim().toLowerCase();
+            const projects = document.querySelectorAll('.project');
+
+            projects.forEach(project => {
+                const title = project.querySelector('.projecttitle')?.textContent.toLowerCase() || '';
+                const desc = project.querySelector('.project-desc')?.textContent.toLowerCase() || '';
+                const matches = title.includes(query) || desc.includes(query);
+
+                project.style.display = matches ? 'flex' : 'none';
+            });
+        });
+
+        const searchbar = document.querySelector('.searchbar');
+        const scrollThreshold = 10; // px scrolled before it disappears
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                searchbar.classList.add('hidden');
+            } else {
+                searchbar.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
 </body>
 
 </html>

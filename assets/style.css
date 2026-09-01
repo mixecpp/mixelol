@@ -45,6 +45,43 @@ html {
   color: #ccc;
 }
 
+.searchbar {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  position:absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  top: 10px
+  margin-bottom: 1.5rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.searchbar.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.searchbar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  width: 250px;
+  text-align: center;
+}
+
+.searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .homecontainer {
   font-variant: small-caps;
   font-family: "Courier New", Courier, monospace;
@@ -53,16 +90,18 @@ html {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-top: 6rem;
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   justify-content: center;
   gap: 1.5rem;
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto;
   padding: 1.5rem;
+  padding-top: 4rem;
 }
 
 .project {
@@ -72,8 +111,6 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 1.5rem;
-  flex: 0 1 calc(50% - 1.5rem);
-  min-width: 300px;
   box-sizing: border-box;
 
   display: flex;
@@ -130,7 +167,7 @@ img#project {
 .project-links a {
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 22px;
   display: inline-block;
   opacity: 0.8;
   transition: opacity 0.2s ease;
@@ -140,7 +177,7 @@ img#project {
   opacity: 1;
 }
 
-.hometitle-wrapper {
+.home-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,4 +240,10 @@ img#project {
 
 .githublink a:hover i {
   transform: translateY(-5px);
+}
+
+@media (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
